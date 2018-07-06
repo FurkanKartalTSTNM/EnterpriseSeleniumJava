@@ -12,11 +12,11 @@ appender("STDOUT", ConsoleAppender) {
     }
 }
 appender("FILE", FileAppender) {
-    file = "target/slnarch.log"
+    file = "target/selenium.log"
     encoder(PatternLayoutEncoder) {
         charset = Charset.forName("UTF-8")
         pattern = $/%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %caller{2} %-5level %logger{36}.%M\(%line\) - %msg%n/$
     }
 }
-logger("com.saha.slnarch", DEBUG)
+logger("com.testinium", DEBUG)
 root(INFO, ["STDOUT", "FILE"])

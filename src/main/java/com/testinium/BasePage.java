@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -465,11 +466,6 @@ public class BasePage {
     getOptions().timeouts().setScriptTimeout(scriptTimeOut, TimeUnit.SECONDS);
   }
 
-  /**
-   * Set Web Driver find element timeout
-   *
-   * @see WebDriver.Timeouts#implicitlyWait(long, TimeUnit)
-   */
   public void setImplicitlyWait(int implicitlyWait) {
     getOptions().timeouts().implicitlyWait(implicitlyWait, TimeUnit.SECONDS);
   }
@@ -500,6 +496,53 @@ public class BasePage {
 
   public void deleteAllCookies() {
     getOptions().deleteAllCookies();
+  }
+
+  public JavascriptExecutor getJavaScriptExecutor() {
+    return ((JavascriptExecutor) webDriver);
+  }
+
+  public void waitPageLoadComplete() {
+    try {
+      webDriverWait.until(
+          driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState")
+              .toString()
+              .equals("complete"));
+    } catch (Throwable error) {
+      error.printStackTrace();
+    }
+  }
+
+  public void waitForAngularLoad() {
+    Boolean existAngular = (Boolean) getJavaScriptExecutor()
+        .executeScript("return (typeof(angular) != 'undefined')");
+    if (existAngular) {
+      try {
+        webDriverWait.until(driver -> ((Boolean) ((JavascriptExecutor) driver).executeScript(
+            "return angular.element(document).injector().get('$http').pendingRequests.length === 0")));
+      } catch (Throwable error) {
+        error.printStackTrace();
+      }
+    }
+  }
+
+  public void waitJQueryComplete() {
+    Boolean existJquery = (Boolean) getJavaScriptExecutor()
+        .executeScript("return (typeof(jQuery) != 'undefined')");
+    if (existJquery) {
+      try {
+        webDriverWait.until(driver -> (Boolean) ((JavascriptExecutor) driver)
+            .executeScript("return jQuery.active == 0"));
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  public void waitAll() {
+    waitPageLoadComplete();
+    waitForAngularLoad();
+    waitJQueryComplete();
   }
 
   public void waitSeconds(int seconds) {
