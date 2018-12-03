@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BasePage {
+public abstract class BasePage {
 
   private Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -212,12 +212,22 @@ public class BasePage {
     webElement.sendKeys(text);
   }
 
+  public void sendKeys(WebElement webElement, Keys keys) {
+    checkElementEnable(webElement)
+        .checkElementVisible(webElement);
+    webElement.sendKeys(keys);
+  }
+
   public void sendKeys(List<WebElement> webElements, int index, String text) {
     sendKeys(webElements.get(index), text);
   }
 
   public void sendKeys(By by, String text) {
     sendKeys(find(by), text);
+  }
+
+  public void sendKeys(By by, Keys keys) {
+    sendKeys(find(by), keys);
   }
 
   public void sendKeys(By by, int index, String text) {

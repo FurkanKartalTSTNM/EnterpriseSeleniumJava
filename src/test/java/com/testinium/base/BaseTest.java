@@ -1,8 +1,10 @@
 package com.testinium.base;
 
 import com.testinium.BasePage;
+import com.testinium.HomePage;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,21 +34,16 @@ public class BaseTest {
     } catch (MalformedURLException e) {
       e.printStackTrace();
     }
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    driver.manage().window().fullscreen();
+    driver.get("http://www.google.com/");
   }
 
   @Test
-  public void testCase() {
-    logger.info("Start test");
-    BasePage basePage = new BasePage(driver);
-    basePage.setPageTimeOut(30);
-    basePage.setImplicitlyWait(10);
-    basePage.fullScreen();
-    basePage.goToUrl("http://www.hepsiburada.com/");
-    basePage.click(By.id("myAccount"));
-    basePage.findByClickable(By.id("login")).click();
-    basePage.close();
-    basePage.waitSeconds(1);
-    logger.info("test");
+  public void searchCase() {
+    HomePage homePage = new HomePage(driver);
+    homePage.search("testinium");
   }
 
   @After
