@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 public class BaseTest {
 
   private Logger logger = LoggerFactory.getLogger(getClass());
-  private final String URL = "http://localhost:4444/wd/hub";
+  private final String URL = "http://hub.testinium.io/wd/hub";
   private RemoteWebDriver driver;
 
   @Before
