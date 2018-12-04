@@ -1,14 +1,12 @@
-package com.testinium.base;
+package com.sahabt.base;
 
-import com.testinium.BasePage;
-import com.testinium.HomePage;
+import com.sahabt.HomePage;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
@@ -17,7 +15,7 @@ import org.slf4j.LoggerFactory;
 public class BaseTest {
 
   private Logger logger = LoggerFactory.getLogger(getClass());
-  private final String URL = "http://hub.testinium.io/wd/hub";
+  private final String URL = "http://hub.sahabt.io/wd/hub";
   private RemoteWebDriver driver;
 
   @Before
@@ -43,7 +41,7 @@ public class BaseTest {
   @Test
   public void searchCase() {
     HomePage homePage = new HomePage(driver);
-    homePage.search("testinium");
+    homePage.search("sahabt");
   }
 
   @After

@@ -18,5 +18,5 @@ appender("FILE", FileAppender) {
         pattern = $/%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %caller{2} %-5level %logger{36}.%M\(%line\) - %msg%n/$
     }
 }
-logger("com.testinium", DEBUG)
+logger("com.sahabt", DEBUG)
 root(INFO, ["STDOUT", "FILE"])
