@@ -11,31 +11,31 @@ import java.net.URL;
 
 public class BaseTest {
 
-	public static final String URL = "http://hub.testinium.io/wd/hub";
-	public static RemoteWebDriver driver;
+  public static final String URL = "http://hub.testinium.io/wd/hub";
+  public static RemoteWebDriver driver;
 
-	@Before
-	public void setUp() {
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("key", System.getProperty("key"));
-		try {
-			driver = new RemoteWebDriver(new URL(URL),capabilities);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
-    public void testCase(){
-        navigate("http://www.hepsiburada.com/");
+  @Before
+  public void setUp() {
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability("key", System.getProperty("key"));
+    try {
+      driver = new RemoteWebDriver(new URL(URL),capabilities);
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
     }
+  }
 
-    public void navigate(String url) {
-        driver.get(url);
-    }
+  @Test
+  public void testCase(){
+    navigate("http://www.hepsiburada.com/");
+  }
 
-	@After
-	public void tearDown() {
-		driver.quit();
-	}
+  public void navigate(String url) {
+    driver.get(url);
+  }
+
+  @After
+  public void tearDown() {
+    driver.quit();
+  }
 }
