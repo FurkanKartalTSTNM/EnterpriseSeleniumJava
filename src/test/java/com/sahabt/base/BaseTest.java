@@ -19,12 +19,12 @@ public class BaseTest {
 
   @Before
   public void setUp() {
+    DesiredCapabilities capabilities = DesiredCapabilities.chrome();
     String key = System.getProperty("key", "");
     if (key.isEmpty()) {
       System.setProperty("webdriver.chrome.driver", "web_driver/chromedriver");
       driver = new ChromeDriver();
     } else {
-      DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability(CapabilityType.PLATFORM, "LINUX");
       capabilities.setCapability(CapabilityType.BROWSER_NAME, "chrome");
       capabilities.setCapability(CapabilityType.VERSION, "LATEST");
