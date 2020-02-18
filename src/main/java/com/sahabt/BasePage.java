@@ -476,10 +476,6 @@ public abstract class BasePage {
     getOptions().timeouts().setScriptTimeout(scriptTimeOut, TimeUnit.SECONDS);
   }
 
-  public void setImplicitlyWait(int implicitlyWait) {
-    getOptions().timeouts().implicitlyWait(implicitlyWait, TimeUnit.SECONDS);
-  }
-
   public void fullScreen() {
     getOptions().window().fullscreen();
   }
