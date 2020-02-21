@@ -468,18 +468,6 @@ public abstract class BasePage {
     return webDriver.manage();
   }
 
-  public void setPageTimeOut(int pageTimeOut) {
-    getOptions().timeouts().pageLoadTimeout(pageTimeOut, TimeUnit.SECONDS);
-  }
-
-  public void setScriptTimeOut(int scriptTimeOut) {
-    getOptions().timeouts().setScriptTimeout(scriptTimeOut, TimeUnit.SECONDS);
-  }
-
-  public void fullScreen() {
-    getOptions().window().fullscreen();
-  }
-
   public Set<Cookie> getAllCookies() {
     return getOptions().getCookies();
   }
