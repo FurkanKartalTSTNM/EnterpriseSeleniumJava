@@ -15,18 +15,19 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 /**
- * This class sets driver, capabilities and some of options
- */
+* The type Hooks.
+* This class sets driver, capabilities and some of options
+*/
 public class BaseTest {
 
     public static Logger logger = Logger.getLogger(BaseTest.class);
     protected static WebDriver driver;
     protected static Actions actions;
     /**
-     * Selected Browser name and platform, initialize capabilities
-     *
-     * @param capabilities
-     */
+    * Selected Browser name and platform, initialize capabilities
+    *
+    * @param capabilities
+    */
     static String browserName = "chrome";
     static DesiredCapabilities capabilities;
 
@@ -53,19 +54,18 @@ public class BaseTest {
     }
 
     /**
-     * After test.
-     * Quit driver
-     */
+    * After test.
+    * Quit driver
+    */
     @AfterAll
     public static void afterTest() {
         driver.quit();
     }
 
     /**
-     * @return the web driver
-     */
+    * @return the web driver
+    */
     public static WebDriver getWebDriver() {
         return driver;
     }
-
 }

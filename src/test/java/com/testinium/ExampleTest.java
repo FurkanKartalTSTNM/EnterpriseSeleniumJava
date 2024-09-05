@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 public class ExampleTest extends BaseTest {
 
-    Steps steps = new Steps();
+Steps steps = new Steps();
 
-    @Test
-    public void exampleTest() {
-        steps.goToPage("https://testinium.com/");
+@Test
+public void exampleTest() {
+    steps.goToPage("https://www.hepsiburada.com/");
         steps.clickElement("random");
     }
 }
