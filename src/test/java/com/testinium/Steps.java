@@ -387,7 +387,9 @@ public class Steps {
     public void clickElement(String key) {
         if (!key.isEmpty()) {
             hoverElement(findElement(key));
+            logger.info(key + " hovered");
             clickElement(findElement(key));
+            logger.info(key + " clicked");
         }
     }
 
