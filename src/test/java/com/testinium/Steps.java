@@ -346,6 +346,7 @@ public class Steps {
 
     public void goToPage(String uri) {
         webDriver.get(uri);
+        logger.info(uri + " adresine gidildi.");
     }
 
     /**
