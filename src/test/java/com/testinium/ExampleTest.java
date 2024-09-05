@@ -9,6 +9,5 @@ Steps steps = new Steps();
 @Test
 public void exampleTest() {
     steps.goToPage("https://www.amazon.com.tr/");
-        steps.clickElement("nav-logo-sprites");
     }
 }

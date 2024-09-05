@@ -346,7 +346,6 @@ public class Steps {
 
     public void goToPage(String uri) {
         webDriver.get(uri);
-        logger.info(uri + " adresine gidildi.");
     }
 
     /**
@@ -387,12 +386,9 @@ public class Steps {
      */
     public void clickElement(String key) {
         if (!key.isEmpty()) {
-            clickElement(findElementWithKeyIfExists(key));
+            hoverElement(findElement(key));
+            clickElement(findElement(key));
         }
-    }
-
-    private WebElement findElementWithKeyIfExists(String key) {
-        return getElementWithKeyIfExists(key);
     }
 
     /**
