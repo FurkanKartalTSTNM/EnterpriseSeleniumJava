@@ -10,7 +10,11 @@ Steps steps = new Steps();
 public void exampleTest() {
     steps.goToPage("https://www.amazon.com.tr/");
     steps.waitSeconds(5);
-    steps.clickElement("nav-logo-sprites");
+    steps.goToPage("https://www.hepsiburada.com/");
+    steps.waitSeconds(5);
+    steps.goToPage("https://www.trendyol.com/");
+    steps.waitSeconds(5);
+    steps.goToPage("https://www.n11.com/");
     steps.waitSeconds(5);
     }
 }
