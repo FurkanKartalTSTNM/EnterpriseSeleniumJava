@@ -17,5 +17,6 @@ public void exampleTest() {
     steps.waitSeconds(5);
     steps.goToPage("https://www.n11.com/");
     steps.waitSeconds(5);
+    steps.clickElement("random");
     }
 }
