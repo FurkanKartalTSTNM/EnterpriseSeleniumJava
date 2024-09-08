@@ -9,7 +9,7 @@ Steps steps = new Steps();
 @Test
 public void exampleTest() {
     steps.goToPage("https://www.amazon.com.tr/");
-    steps.clickElement("//*[@id='nav-link-accountList']");
+    steps.clickElement("nav-logo-sprites");
     steps.waitSeconds(5);
     }
 }
