@@ -10,13 +10,13 @@ Steps steps = new Steps();
 @Test
 public void exampleTest() {
     steps.goToPage("https://www.amazon.com.tr/");
-    steps.waitSeconds(5);
-    steps.goToPage("https://www.hepsiburada.com/");
-    steps.waitSeconds(5);
-    steps.goToPage("https://www.trendyol.com/");
-    steps.waitSeconds(5);
-    steps.goToPage("https://www.n11.com/");
-    steps.waitSeconds(5);
-    steps.clickElement("random");
+    driver.findElement(By.xpath("//a[1]")).click();
+    steps.waitSeconds(2);
+    driver.findElement(By.id("nav-logo-sprites")).click();
+    steps.waitSeconds(2);
+    driver.findElement(By.id("nav-global-location-popover-link")).click();
+    steps.waitSeconds(2);
+    driver.findElement(By.cssSelector(".a-button-close.a-declarative")).click();
+    steps.waitSeconds(2);
     }
 }
