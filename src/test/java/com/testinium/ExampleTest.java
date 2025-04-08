@@ -52,6 +52,7 @@ public void exampleTest() {
     steps.waitSeconds(2);
     }
 
+    @Test
     public void basicTest01() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -96,7 +97,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
-
+    @Test
     public void basicTest02() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -141,7 +142,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
-
+    @Test
     public void basicTest03() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -186,7 +187,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
-
+    @Test
     public void basicTest04() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -231,7 +232,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
-
+    @Test
     public void basicTest05() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -276,7 +277,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
-
+    @Test
     public void basicTest06() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -320,6 +321,7 @@ public void exampleTest() {
         driver.findElement(By.cssSelector(".a-button-close.a-declarative")).click();
         steps.waitSeconds(2);
     }
+    @Test
     public void basicTest07() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -364,7 +366,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
-
+    @Test
     public void basicTest08() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -409,6 +411,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
+    @Test
     public void basicTest09() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -453,6 +456,7 @@ public void exampleTest() {
         steps.waitSeconds(2);
     }
 
+    @Test
     public void basicTest10() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
@@ -496,6 +500,7 @@ public void exampleTest() {
         driver.findElement(By.cssSelector(".a-button-close.a-declarative")).click();
         steps.waitSeconds(2);
     }
+    @Test
     public void failTest() {
         steps.goToPage("https://www.amazon.com.tr/");
         driver.findElement(By.xpath("//a[1]")).click();
